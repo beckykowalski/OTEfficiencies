@@ -1,1 +1,26 @@
-test
+################################################################################
+Information regarding purpose of files in repo and anything related to submission
+
+##### Files in "condorsub":
+      # allows automatic submission of diana job to execute OT Efficiency module
+      # Set up enviornment on CNAF using the following docDB information: https://docdb.wlab.yale.edu/cuore/RetrieveFile?docid=2237&filename=Re_triggering_and_OT_Manual.pdf&version=1
+      	    # Different ./configure settings for CNAF uae as follows:
+	    ./configure --root-config-path=/opt/exp_software/cuore/root/root/bin/root-config --detector-name=DN_CUORE --boost-lib-dir=/opt/exp_software/cuore/boost/boost/lib --boost-inc-dir=/opt/exp_software/cuore/boost/boost/include --git-path=/opt/exp_software/cuore/git/git/bin/git --python-path=/opt/exp_software/cuore/python/python/bin/python --pg-config-path=/usr/pgsql-9.6/bin/pg_config --gsl-config-path=/opt/exp_software/cuore/gsl/gsl/bin/gsl-config --fftw-wisdom-path=/opt/exp_software/cuore/fftw/fftw/bin/fftw-wisdom --fftw-inc-dir=/opt/exp_software/cuore/fftw/fftw/include --fftw-lib-dir=/opt/exp_software/cuore/fftw/fftw/lib  --db-host=dbfarm-2 --db-port=35432 --db-name=qdb  --db-user=cuore --db-pwd=Babil0nia  --enable-apollo
+      # Line 21 in "MakeDianaJobFiles.sh" takes input of text file with all runs in dataset
+      # Ensure any output directories are created 
+      # Run as
+      	./MakeDianaJobFiles.sh
+      # Run actual diana jobs by copying "SubmitJobsForRun.sh" in directory where diana/submission jobs were output as
+      	./SubmitJobsForRun.sh
+
+##### "FindThresholdTextFileMaker.py" makes text files of thresholds output from module
+      # Text files for each run/bolometer pair with thresholds < 10 and < 7 keV
+      # Text file with number of bolometers for each run with thresholds < 10 and 7 keV
+      # Ensure any output directories are created 
+      # Run as
+      	python FindThresholdTextFileMaker.py
+
+##### "makeTowerAllTowerPlots_final.py" makes plot of OT Threshold vs bolometer. Each line represents a dataset of the run. One file produced for each tower.
+      # Ensure any output directories are created 
+      # Run as
+      	python makeTowerAllTowerPlots_final.py

@@ -1,0 +1,11 @@
+#
+Executable = REPLACEEX
+#request_memory = 2 GB
+Universe = vanilla 
+Output = /storage/gpfs_data/cuore/users/kowalski/OTEff_Jan21_2022/cuoresw/workspace/log/out_ds3519_run${REPLACERUN}_$t{REPLACETOWER}_$(process).log
+Log = /storage/gpfs_data/cuore/users/kowalski/OTEff_Jan21_2022/cuoresw/workspace/log/log_ds3519_run${REPLACERUN}_$t{REPLACETOWER}_$(process).log
+Error = /storage/gpfs_data/cuore/users/kowalski/OTEff_Jan21_2022/cuoresw/workspace/log/err_ds3519_run${REPLACERUN}_$t{REPLACETOWER}_$(process).log
+ShouldTransferFiles = YES
+WhenToTransferOutput = ON_EXIT
+
+Queue 
