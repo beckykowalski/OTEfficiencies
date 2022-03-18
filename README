@@ -24,3 +24,8 @@ Information regarding purpose of files in repo and anything related to submissio
       # Ensure any output directories are created 
       # Run as
       	python makeTowerAllTowerPlots_final.py
+
+##### "FindExposure.C"
+      # Must be run in a cuoresw enviornment, uses RunsManager to determine the exposure for a dataset-channel pair.
+      # Takes as input the output files generated from GetLowAnalysisLevelThresholdText.py
+      
